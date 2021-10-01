@@ -1,0 +1,114 @@
+@import "margin-padding";
+@import "fonts";
+
+.m, %m {
+  &-auto {
+    margin-left: auto;
+    margin-right: auto;
+    &-left {
+      margin-left: auto;
+    }
+    &-right {
+      margin-right: auto;
+    }
+  }
+  @each $margin-name, $margin-size in $margins  {
+    &t {
+      &-#{$margin-name} {
+        margin-top: $margin-size;
+      }
+        &b-#{$margin-name} {
+          margin-bottom: $margin-size;
+        }
+      }
+    &b-#{$margin-name} {
+      margin-bottom: $margin-size;
+    }
+    &l-#{$margin-name} {
+      margin-left: $margin-size;
+    }
+    &r-#{$margin-name} {
+      margin-right: $margin-size;
+    }
+  }
+}
+
+.p, %p {
+  box-sizing: border-box;
+  @each $margin-name, $margin-size in $margins  {
+    &-#{$margin-name} {
+      padding: $margin-size;
+    }
+    &t {
+      &-#{$margin-name} {
+        padding-top: $margin-size;
+      }
+        &b-#{$margin-name} {
+          padding-bottom: $margin-size;
+        }
+      }
+    &b-#{$margin-name} {
+      padding-bottom: $margin-size;
+    }
+    &l-#{$margin-name} {
+      padding-left: $margin-size;
+    }
+    &r-#{$margin-name} {
+      padding-right: $margin-size;
+    }
+  }
+}
+
+.font, %font {
+  @each $font-size-name, $font-size in $font-sizes  {
+    &-#{$font-size-name} {
+      font-size: $font-size;
+      line-height: $font-size * 1.5;
+    }
+  }
+}
+
+a {
+  cursor: pointer;
+}
+
+.container {
+  width: 1200px;
+  max-width: 100%;
+  @extend %pl-10;
+  @extend %pr-10;
+}
+
+.text {
+  &-center {
+    text-align: center;
+  }
+  &-left {
+    text-align: left;
+  }
+  &-right {
+    text-align: right;
+  }
+}
+
+.btn {
+  border: none;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+.ngx-slider {
+  .ngx-slider-pointer {
+    background-color: var(--primary-color) !important;
+    &:after {
+      background-color: var(--white-color) !important;
+    }
+  }
+  .ngx-slider-selection {
+    background-color: var(--primary-color) !important;
+  }
+}

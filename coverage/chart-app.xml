@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="10" failures="0" time="11.296">
+  <testsuite name="DashboardComponent" errors="0" failures="0" skipped="0" timestamp="2021-10-01T12:33:53" time="6.999" tests="6">
+    <testcase classname="DashboardComponent should create" name="DashboardComponent should create" time="0.668">
+    </testcase>
+    <testcase classname="DashboardComponent should check for no charts available message" name="DashboardComponent should check for no charts available message" time="0.461">
+    </testcase>
+    <testcase classname="DashboardComponent should add new tab after click add tab button" name="DashboardComponent should add new tab after click add tab button" time="0.342">
+    </testcase>
+    <testcase classname="DashboardComponent should remove tab after click on close button" name="DashboardComponent should remove tab after click on close button" time="0.311">
+    </testcase>
+    <testcase classname="DashboardComponent should view default value chart when click on add button and then Add Static Dataset" name="DashboardComponent should view default value chart when click on add button and then Add Static Dataset" time="0.324">
+    </testcase>
+    <testcase classname="DashboardComponent should change range slider values properly" name="DashboardComponent should change range slider values properly" time="0.439">
+    </testcase>
+  </testsuite>
+  <testsuite name="AddChartsDialogComponent" errors="0" failures="0" skipped="0" timestamp="2021-10-01T12:34:00" time="0.914" tests="1">
+    <testcase classname="AddChartsDialogComponent should create" name="AddChartsDialogComponent should create" time="0.485">
+    </testcase>
+  </testsuite>
+  <testsuite name="BaseLayoutComponent" errors="0" failures="0" skipped="0" timestamp="2021-10-01T12:34:01" time="1.13" tests="1">
+    <testcase classname="BaseLayoutComponent should create" name="BaseLayoutComponent should create" time="0.639">
+    </testcase>
+  </testsuite>
+  <testsuite name="NavbarComponent" errors="0" failures="0" skipped="0" timestamp="2021-10-01T12:34:02" time="0.724" tests="1">
+    <testcase classname="NavbarComponent should create" name="NavbarComponent should create" time="0.427">
+    </testcase>
+  </testsuite>
+  <testsuite name="AppComponent" errors="0" failures="0" skipped="0" timestamp="2021-10-01T12:34:03" time="0.301" tests="1">
+    <testcase classname="AppComponent should create the app" name="AppComponent should create the app" time="0.04">
+    </testcase>
+  </testsuite>
+</testsuites>

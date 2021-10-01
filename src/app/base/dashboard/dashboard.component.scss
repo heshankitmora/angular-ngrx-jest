@@ -1,0 +1,70 @@
+@import "general";
+
+::ng-deep mat-tab-group {
+  .mat-tab-labels {
+    > div {
+      padding-left: 0;
+      padding-right: 0;
+      width: 100%;
+      &.mat-tab-label-active {
+        background-color: var(--white-color);
+        opacity: 1;
+      }
+      .mat-tab-label-content {
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        .mat-tab-label {
+          padding-left: 0;
+          padding-right: 0;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+    }
+    .mat-tab-label-section {
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      display: flex;
+      button {
+        background-color: transparent;
+        border: none;
+      }
+    }
+  }
+}
+.sticky-button-wrapper {
+  position: fixed;
+  text-align: right;
+  bottom: 20px;
+  right: 20px;
+  &-button {
+    background-color: var(--primary-color);
+    z-index: 1000;
+    transition: 0.2s transform;
+    &.expanded {
+      transform: rotate(45deg);
+    }
+  }
+  &-section {
+    > button {
+      display: block;
+    }
+  }
+}
+
+
+.bar-wrapper {
+  display: block;
+  width: 100%;
+  &.hide-chart {
+    display: none;
+  }
+  &.visible-chart {
+    display: block;
+  }
+}
+

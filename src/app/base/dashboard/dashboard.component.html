@@ -1,0 +1,52 @@
+<div class="container m-auto mt-40">
+  <mat-tab-group [selectedIndex]="selected.value" (selectedIndexChange)="selectIndexSection(selected, $event)">
+    <mat-tab *ngFor="let tab of tabs; let index = index" [label]="tab">
+      <ng-template mat-tab-label>
+        <div class="mat-tab-label-section">
+          <span>
+            {{tab}}
+          </span>
+          <button class="close-tab-button" [disabled]="tabs.length === 1" (click)="removeTab(index)">
+                <mat-icon>close</mat-icon>
+          </button>
+        </div>
+      </ng-template>
+      <div class="tab-content-section p-20">
+        <div>
+          <ng-container *ngIf="(tabDataList$ | async) && isChartVisible">
+            <ngx-slider [(value)]="minValue" [(highValue)]="highValue" [options]="options" (userChange)="rangeChange($event)"></ngx-slider>
+          </ng-container>
+        </div>
+        <div *ngIf="!isChartVisible">
+          <p class="text-center font-22 para-no-charts-text">
+            No charts available, please click on the "+" button to add a new chart
+          </p>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab disabled>
+      <ng-template mat-tab-label>
+          <button class="add-tab-button" mat-icon-button (click)="addTab()">
+              <mat-icon>add_circle</mat-icon>
+          </button>
+      </ng-template>
+  </mat-tab>
+  </mat-tab-group>
+  <div [ngClass]="isChartVisible ? 'visible-chart' : 'hide-chart'" class="bar-wrapper">
+    <canvas id="canvas-data" height="320">{{ chart }}</canvas>
+  </div>
+</div>
+<ng-container *ngIf="!(isLoading$ | async)">
+  <div class="sticky-button-wrapper">
+    <ng-container *ngIf="isButtonExpand">
+      <div class="sticky-button-wrapper-section">
+        <button *ngIf="chartDataType !== getChartDataType.client" (click)="addChartToTab(getChartDataType.client)" class="btn mb-10">Add Manual Data</button>
+        <button (click)="addChartToTab()" class="btn mb-10 btn-get-static-data">Add Static Dataset</button>
+      </div>
+    </ng-container>
+    <button (click)="addChartSelection()" [ngClass]="isButtonExpand ? 'expanded' : ''"  class="sticky-button-wrapper-button" mat-fab color="primary">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</ng-container>
+

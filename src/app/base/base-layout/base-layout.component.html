@@ -1,0 +1,36 @@
+<ng-container>
+  <mat-drawer-container [class.drawer-opened]="drawer.opened" class="example-container">
+    <mat-drawer #drawer class="drawer" mode="side" opened="true">
+      <mat-toolbar class="header" fxLayout="row" fxLayoutAlign="center">
+        <div>
+          <h1>
+            Ngrx | Jest
+          </h1>
+        </div>
+        <a>
+          <mat-icon class="close" (click)="drawer.close()">close</mat-icon>
+        </a>
+      </mat-toolbar>
+      <div class="contents">
+        <app-navbar></app-navbar>
+      </div>
+    </mat-drawer>
+    <mat-drawer-content>
+      <mat-toolbar fxLayout="row" fxLayoutAlign="center" class="header">
+        <a>
+          <mat-icon *ngIf="!drawer.opened" (click)="drawer.toggle()">
+            menu
+          </mat-icon>
+        </a>
+        <div class="pl-10">
+          <h1>
+            Dashboard
+          </h1>
+        </div>
+      </mat-toolbar>
+      <div class="contents">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</ng-container>

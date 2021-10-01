@@ -1,0 +1,30 @@
+mat-drawer-container {
+  mat-toolbar {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+  }
+  mat-drawer {
+    width: 25%;
+    max-width: 300px;
+    mat-toolbar {
+      &.header {
+        > a {
+          line-height: 0;
+        }
+        > div {
+          width: 100%;
+        }
+      }
+    }
+  }
+  mat-drawer-content {
+    min-height: 100vh;
+    mat-toolbar {
+      &.header {
+        > a {
+          line-height: 0;
+        }
+      }
+    }
+  }
+}

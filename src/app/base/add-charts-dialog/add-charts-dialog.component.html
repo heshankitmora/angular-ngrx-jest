@@ -1,0 +1,20 @@
+<div class="add-chart-wrapper">
+  <form [formGroup]="frequencyForm" (ngSubmit)="onFrequencySubmit()">
+    <div formArrayName="frequencylist">
+      <div *ngFor="let freq of getFrequencyControls(); let i = index" [formGroupName]="i">
+        <div>
+          <mat-form-field class="full-width">
+            <mat-label>Index {{i}}: Frequency</mat-label>
+            <input
+              matInput
+              type="number"
+              formControlName="frequency"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <input type="button" (click)="addFrequency()" class="btn btn-primary mr-5" value="Add Frequency"/>
+    <input type="submit" class="btn btn-primary" value="Save"/>
+  </form>
+</div>
